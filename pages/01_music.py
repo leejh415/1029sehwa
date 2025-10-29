@@ -1,5 +1,5 @@
 import streamlit as st
-from transformers import pipeline
+from transformers
 
 # -----------------------------
 # 감정 분석 모델 로드 (캐싱)
