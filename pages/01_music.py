@@ -1,5 +1,4 @@
 import streamlit as st
-import pipeline
 
 # -----------------------------
 # 감정 분석 모델 로드 (Streamlit 캐시)
