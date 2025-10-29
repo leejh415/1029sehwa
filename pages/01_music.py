@@ -1,6 +1,19 @@
 import streamlit as st
 from transformers import pipeline
 
+@st.cache_resource
+def load_model():
+    return pipeline("sentiment-analysis", model="cardiffnlp/twitter-roberta-base-sentiment")
+
+model = load_model()
+
+st.title("감정 분석 테스트 🎭")
+text = st.text_input("감정을 분석할 문장을 입력하세요:")
+
+if st.button("분석하기"):
+    result = model(text)[0]
+    st.json(result)
+
 # -----------------------------
 # 감정 분석 모델 로드 (Streamlit 캐시)
 # -----------------------------
